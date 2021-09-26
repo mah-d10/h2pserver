@@ -38,5 +38,8 @@ app.use((error, req, res, next) => {
 mongoose.set("useUnifiedTopology", true);
 mongoose
   .connect("mongodb://127.0.0.1:27017/html2pdf", { useNewUrlParser: true })
-  .then((result) => app.listen(4000))
+  .then((result) => {
+    app.listen(4000);
+    console.log("listening on port 4000");
+  })
   .catch((error) => console.log(error));
